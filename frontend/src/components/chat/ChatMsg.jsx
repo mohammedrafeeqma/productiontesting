@@ -73,9 +73,9 @@ function ChatMsg({ currentChat, onlineUsers, setOnlineUsers }) {
   useEffect(() => {
     dispatch(listuserDetails(id));
   }, []);
-
+//ws
   useEffect(() => {
-    socket.current = io("ws://localhost:8900");
+    socket.current = io("http://127.0.0.1:8900");
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         sender: data.senderId,
